@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reproductor de Música</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+                <div class="home">
+                    <img src="icons/HomeBlack.png" alt="Inicio">
+                </div>
+            
+                <div class="search">
+                    <input placeholder="Buscar canciones, artistas...">
+                </div>
+
+                <div class="login">
+                    <img src="icons/AvatarGris.png" alt="Usuario">
+                </div>
+
+        </header>
+
+        <div class="container">
+            <aside class="sidebar">
+                <h2>Canciones</h2>
+                <ul class="song-list">
+                    <li>1. Cancion Uno - Artista A</li>
+                    <li>2. Canción Dos - Artista B</li>
+                    <li>3. Canción Tres - Artista C</li>
+                    <li>4. Canción Cuatro - Artista D</li>
+                    <li>5. Canción Cinco - Artista E</li>
+                </ul>
+
+                <h2>Artistas</h2>
+                <ul class="artist-list">
+                    <li>Artista A</li>
+                    <li>Artista B</li>
+                    <li>Artista C</li>
+                    <li>Artista D</li>
+                    <li>Artista E</li>
+                </ul>
+            </aside>
+
+            <main class="player">
+                <div class="song-info">
+                    <img src="cover-placeholder.png" alt="Portada">
+                    <div class="meta">
+                        <h3>Selecciona una canción</h3>
+                        <p>—</p>
+                        <p>Álbum: —</p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="control" aria-label="Anterior">⟨⟨</button>
+                    <button class="control" aria-label="Reproducir">▶</button>
+                    <button class="control" aria-label="Pausar" style="display:none">⏸</button>
+                    <button class="control" aria-label="Siguiente">⟩⟩</button>
+                </div>
+
+                <div class="progress">
+                    <input type="range" value="0" min="0" max="100">
+                    <div class="time"><span>0:00</span> / <span>0:00</span></div>
+                </div>
+            </main>
+        </div>
+
+    </body>
+</html>
