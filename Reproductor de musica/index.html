@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reproductor de Música</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+                <div class="home">
+                    <img src="icons/HomeBlack.png" alt="Inicio">
+                </div>
+            
+                <div class="search">
+                    <input placeholder="Buscar canciones, artistas...">
+                </div>
+
+                <div class="login">
+                    <img src="icons/AvatarGris.png" alt="Usuario">
+                </div>
+
+        </header>
+
+        <div class="container">
+            <aside class="sidebar">
+                <h2>Canciones</h2>
+                <ul id="song-list" class="song-list">
+                    <li data-src="songs/song1.mp3" data-title="Mis ojos lloran por ti" data-artist="Big Boy" data-cover="covers/cover1.jpg">1. Mis ojos lloran por ti - Big Boy</li>
+                    <li data-src="songs/song2.mp3" data-title="Exclusivamente Mia" data-artist="Lefty Perez" data-cover="covers/cover2.jpg">2. Exclusivamente Mia - Lefty Perez</li>
+                    <li data-src="songs/song3.mp3" data-title="WO OH OH" data-artist="Omar Courtz & ROA" data-cover="covers/cover3.jpg">3. WO OH OH - Omar Courtz & ROA</li>
+                    <li data-src="songs/song4.mp3" data-title="Una Fotografia" data-artist="Bonny Cepeda" data-cover="covers/cover4.jpg">4. Una Fotografia - Bonny Cepeda</li>
+                    <li data-src="songs/song5.mp3" data-title="Billie Jean" data-artist="Michael Jackson" data-cover="covers/cover5.jpg">5. Billie Jean - Michael Jackson</li>
+                </ul>
+
+                <h2>Artistas</h2>
+                <ul id="artist-list" class="artist-list">
+                    <li>Big Boy</li>
+                    <li>Lefty Perez</li>
+                    <li>Omar Courtz</li>
+                    <li>Bonny Cepeda</li>
+                    <li>Michael Jackson</li>
+                </ul>
+            </aside>
+
+            <main class="player">
+                <div class="song-info" id="song-info">
+                    <img id="cover" src="cover-placeholder.png" alt="Portada">
+                    <div class="meta">
+                        <h3 id="title">Selecciona una canción</h3>
+                        <p id="artist">—</p>
+                    </div>
+                </div>
+
+                <audio id="audio"></audio>
+
+                <div class="controls">
+                    <button id="prev" class="control" aria-label="Anterior">⏮</button>
+                    <button id="play" class="control" aria-label="Reproducir">▶</button>
+                    <button id="pause" class="control" aria-label="Pausar" style="display:none">⏸</button>
+                    <button id="next" class="control" aria-label="Siguiente">⏭</button>
+                </div>
+
+                <div class="progress">
+                    <input type="range" id="progress" value="0" min="0" max="100">
+                    <div class="time"><span id="current">0:00</span> / <span id="duration">0:00</span></div>
+                </div>
+                
+            </main>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
