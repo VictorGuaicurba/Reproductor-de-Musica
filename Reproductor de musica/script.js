@@ -24,13 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	function loadSong(index) {
 		const s = songs[index];
 		if (!s) return;
+
 		document.getElementById('title').textContent = s.title;
 		document.getElementById('artist').textContent = s.artist;
+
 		const currentCover = s.cover || 'cover-placeholder.png';
 		coverEl.src = currentCover;
+
 		bodyEl.style.backgroundImage = `url('${currentCover}')`;
 	}
-
 
 	function playSong() {
 		playBtn.style.display = 'none';

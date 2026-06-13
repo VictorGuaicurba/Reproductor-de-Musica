@@ -7,10 +7,13 @@
         <title>Reproductor de Música</title>
         <link rel="stylesheet" href="style.css" />
     </head>
+
     <body>
-        <header>
+    <div class="app-layout">
+
+        <header class="main-header">
                 <div class="home">
-                    <img src="icons/HomeBlack.png" alt="Inicio">
+                    <img src="icons/HomeBlack.png" alt="Inicio" class="icon">
                 </div>
             
                 <div class="search">
@@ -18,9 +21,8 @@
                 </div>
 
                 <div class="login">
-                    <img src="icons/AvatarGris.png" alt="Usuario">
+                    <img src="icons/AvatarGris.png" alt="Usuario" class="icon">
                 </div>
-
         </header>
 
         <div class="container">
@@ -31,7 +33,7 @@
                     <li data-src="songs/song2.mp3" data-title="Exclusivamente Mia" data-artist="Lefty Perez" data-cover="covers/cover2.jpg">2. Exclusivamente Mia - Lefty Perez</li>
                     <li data-src="songs/song3.mp3" data-title="WO OH OH" data-artist="Omar Courtz & ROA" data-cover="covers/cover3.jpg">3. WO OH OH - Omar Courtz & ROA</li>
                     <li data-src="songs/song4.mp3" data-title="Una Fotografia" data-artist="Bonny Cepeda" data-cover="covers/cover4.jpg">4. Una Fotografia - Bonny Cepeda</li>
-                    <li data-src="songs/song5.mp3" data-title="Billie Jean" data-artist="Michael Jackson" data-cover="covers/cover5.jpg">5. Billie Jean - Michael Jackson</li>
+                    <li data-src="songs/song5.mp3" data-title="Triller" data-artist="Michael Jackson" data-cover="covers/cover5.jpg">5. Triller - Michael Jackson</li>
                 </ul>
 
                 <h2>Artistas</h2>
@@ -48,18 +50,18 @@
                 <div class="song-info" id="song-info">
                     <img id="cover" src="cover-placeholder.png" alt="Portada">
                     <div class="meta">
-                        <h3 id="title">Selecciona una canción</h3>
-                        <p id="artist">—</p>
+                        <h3 id="title" class="song-title">Selecciona una canción</h3>
+                        <p id="artist" class="artist-name">—</p>
                     </div>
                 </div>
 
                 <audio id="audio"></audio>
 
                 <div class="controls">
-                    <button id="prev" class="control" aria-label="Anterior">⏮</button>
-                    <button id="play" class="control" aria-label="Reproducir">▶</button>
-                    <button id="pause" class="control" aria-label="Pausar" style="display:none">⏸</button>
-                    <button id="next" class="control" aria-label="Siguiente">⏭</button>
+                    <button id="prev" class="control" aria-label="Anterior">⏪</button>
+                    <button id="play" class="control" aria-label="Reproducir">▶️</button>
+                    <button id="pause" class="control" aria-label="Pausar" style="display:none">||</button>
+                    <button id="next" class="control" aria-label="Siguiente">⏩</button>
                 </div>
 
                 <div class="progress">
@@ -69,7 +71,7 @@
                 
             </main>
         </div>
-
+    </div>
         <script src="script.js"></script>
     </body>
 </html>
