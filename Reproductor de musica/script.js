@@ -19,27 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
 		element: li
 	}));
 
-	let current = 0;
-	
 	function loadSong(index) {
 		const s = songs[index];
 		if (!s) return;
-
+		audio.src = s.src;
 		document.getElementById('title').textContent = s.title;
 		document.getElementById('artist').textContent = s.artist;
-
 		const currentCover = s.cover || 'cover-placeholder.png';
 		coverEl.src = currentCover;
-
 		bodyEl.style.backgroundImage = `url('${currentCover}')`;
+		document.querySelectorAll('#song-list li').forEach(li => li.classList.remove('active'));
+		s.element.classList.add('active');
 	}
 
 	function playSong() {
+		if (!audio.src) loadSong(current);
+		audio.play().catch(() => {});
 		playBtn.style.display = 'none';
 		pauseBtn.style.display = 'inline-block';
 	}
 
 	function pauseSong() {
+		audio.pause();
 		playBtn.style.display = 'inline-block';
 		pauseBtn.style.display = 'none';
 	}
@@ -48,13 +49,53 @@ document.addEventListener('DOMContentLoaded', () => {
 		li.addEventListener('click', () => {
 			current = i;
 			loadSong(current);
+			playSong();
 		});
 	});
 
 	playBtn.addEventListener('click', () => playSong());
 	pauseBtn.addEventListener('click', () => pauseSong());
 
+	nextBtn.addEventListener('click', () => {
+		current = (current + 1) % songs.length;
+		loadSong(current);
+		playSong();
+	});
 
+	prevBtn.addEventListener('click', () => {
+		current = (current - 1 + songs.length) % songs.length;
+		loadSong(current);
+		playSong();
+	});
+
+	audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            progress.value = progressPercent;
+            
+            // Formatear minutos y segundos
+            let mins = Math.floor(audio.currentTime / 60);
+            let secs = Math.floor(audio.currentTime % 60);
+            currentTimeEl.textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+        let mins = Math.floor(audio.duration / 60);
+        let secs = Math.floor(audio.duration % 60);
+        durationEl.textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    });
+
+    progress.addEventListener('input', () => {
+        const timeToChange = (progress.value * audio.duration) / 100;
+        audio.currentTime = timeToChange;
+    });
+
+    audio.addEventListener('ended', () => {
+        nextBtn.click();
+    });
+
+	// Inicializar con la primera canción visible
 	if (songs.length) loadSong(0);
 });
 
