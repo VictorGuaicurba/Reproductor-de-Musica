@@ -4,43 +4,42 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Reproductor de Música</title>
+        <title>BeatCode</title>
         <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
 
     <body>
     <div class="app-layout">
 
         <header class="main-header">
-                <div class="home">
-                    <img src="icons/HomeBlack.png" alt="Inicio" class="icon">
-                </div>
-            
+
+                    <h1 class="app-title">BeatCode</h1>
+
                 <div class="search">
-                    <input placeholder="Buscar canciones, artistas...">
+                    <input id="search-input" placeholder="Buscar canciones, artistas...">
                 </div>
 
-                <div class="login">
+                <div>
                     <img src="icons/AvatarGris.png" alt="Usuario" class="icon">
                 </div>
         </header>
 
         <div class="container">
             <aside class="sidebar">
-                <h2>Canciones</h2>
+                <h2 class="sidebar-title">Canciones</h2>
                 <ul id="song-list" class="song-list">
-                    <li data-src="songs/song1.mp3" data-title="Mis ojos lloran por ti" data-artist="Big Boy" data-cover="covers/cover1.jpg">1. Mis ojos lloran por ti - Big Boy</li>
-                    <li data-src="songs/song2.mp3" data-title="Exclusivamente Mia" data-artist="Lefty Perez" data-cover="covers/cover2.jpg">2. Exclusivamente Mia - Lefty Perez</li>
-                    <li data-src="songs/song3.mp3" data-title="WO OH OH" data-artist="Omar Courtz & ROA" data-cover="covers/cover3.jpg">3. WO OH OH - Omar Courtz & ROA</li>
-                    <li data-src="songs/song4.mp3" data-title="Una Fotografia" data-artist="Bonny Cepeda" data-cover="covers/cover4.jpg">4. Una Fotografia - Bonny Cepeda</li>
-                    <li data-src="songs/song5.mp3" data-title="Triller" data-artist="Michael Jackson" data-cover="covers/cover5.jpg">5. Triller - Michael Jackson</li>
-                <!--
-                    <li data-src="songs/" data-title="" data-artist="Michael Jackson" data-cover="covers/"></li>
-                    <li data-src="songs/" data-title="" data-artist="Michael Jackson" data-cover="covers/"></li>
-                    <li data-src="songs/" data-title="" data-artist="Michael Jackson" data-cover="covers/"></li>
-                    <li data-src="songs/" data-title="" data-artist="Michael Jackson" data-cover="covers/"></li>
-                    <li data-src="songs/" data-title="" data-artist="Michael Jackson" data-cover="covers/"></li>
-                -->
+                    <li data-src="songs/Gods Plan.mp3" data-title="God's Plan" data-artist="Drake" data-cover="covers/Drake.jpg">God's Plan - Drake</li>
+                    <li data-src="songs/Coco Chanel.mp3" data-title="Coco Chanel" data-artist="Eladio Carrion & Bad Bunny" data-cover="covers/Eladio-Carrion.jpg">Coco Chanel - Eladio Carrion & Bad Bunny</li>
+                    <li data-src="songs/Todo o Nada.mp3" data-title="Todo o Nada" data-artist="Eladio Carrion" data-cover="covers/Eladio-Carrion.jpg">Todo o Nada - Eladio Carrion</li>
+                    <li data-src="songs/Candy.mp3" data-title="Candy" data-artist="Plan B" data-cover="covers/PlanB.jpg">Candy - Plan B</li>
+                    <li data-src="songs/Fanatica Sensual.mp3" data-title="Fanatica Sensual" data-artist="Plan B" data-cover="covers/PlanB.jpg">Fanatica Sensual - Plan B</li>
+                    <li data-src="songs/Thriller.mp3" data-title="Thriller" data-artist="Michael Jackson" data-cover="covers/Michael-Jackson.jpg">Thriller - Michael Jackson</li>
+                    <li data-src="songs/Billie Jean.mp3" data-title="Billie Jean" data-artist="Michael Jackson" data-cover="covers/Michael-Jackson.jpg">Billie Jean - Michael Jackson</li>
+                    <li data-src="songs/They Don't Care About Us.mp3" data-title="They Don't Care About Us" data-artist="Michael Jackson" data-cover="covers/Michael-Jackson.jpg">They Don't Care About Us - Michael Jackson</li>
                 </ul>
             </aside>
 
@@ -56,10 +55,12 @@
                 <audio id="audio"></audio>
 
                 <div class="controls">
-                    <button id="prev" class="control" aria-label="Anterior">⏪</button>
-                    <button id="play" class="control" aria-label="Reproducir">▶️</button>
-                    <button id="pause" class="control" aria-label="Pausar" style="display:none">||</button>
-                    <button id="next" class="control" aria-label="Siguiente">⏩</button>
+                    <button id="shuffle" class="control secondary"><span class="material-symbols-outlined">shuffle</span></button>
+                    <button id="prev" class="control"><span class="material-symbols-outlined">skip_previous</span></button>
+                    <button id="play" class="control"><span class="material-symbols-outlined">play_arrow</span></button>
+                    <button id="pause" class="control" style="display:none"><span class="material-symbols-outlined">pause</span></button>
+                    <button id="next" class="control"><span class="material-symbols-outlined">skip_next</span></button>
+                    <button id="loop" class="control secondary"><span class="material-symbols-outlined">repeat</span></button>
                 </div>
 
                 <div class="progress">
